@@ -415,6 +415,48 @@ you should place your code here."
   (setq kill-whole-line t)
   ;; Frame transparency
   (spacemacs/toggle-transparency nil)
+
+  ;;
+  ;; Mozc
+  ;; https://github.com/google/mozc
+  ;;
+  ;; MacOSでIMの日本語入力状態を解除するための設定
+  (when (eq system-type 'darwin)
+    (defun my/eisuu-key ()
+      "英数キーをエミュレートする"
+      (interactive)
+      (call-process "osascript" nil t nil "-e" "tell application \"System Events\" to key code 102"))
+    ;; Spacemacsにフォーカスを当てたら英数キーを押す
+    (add-hook 'focus-in-hook 'my/eisuu-key)
+    ;; Mozcを起動したら英数キーを押す
+    (add-hook 'mozc-mode-hook 'my/eisuu-key))
+
+  (use-package mozc
+    :init
+    (setq default-input-method "japanese-mozc")
+    (setq mozc-helper-program-name (cond ((eq system-type 'darwin) "~/.own/bin/mozc_emacs_helper")
+                                         ((eq system-type 'gnu/linux) "/usr/bin/mozc_emacs_helper")))
+    :custom
+    (mozc-candidate-style 'echo-area)
+    (mozc-leim-title "[も]"))
+
+  (use-package mozc-temp
+    :init
+    (global-set-key (kbd "M-n") 'mozc-temp-convert))
+
+  ;;
+  ;; migemo
+  ;;
+  (use-package migemo
+    :config
+    (setq migemo-command (cond ((eq system-type 'darwin) "/usr/local/bin/cmigemo")
+                               ((eq system-type 'gnu/linux) "/usr/bin/cmigemo")))
+    (setq migemo-options '("-q" "--emacs" "-i" "\a"))
+    (setq migemo-dictionary (cond ((eq system-type 'darwin) "/usr/local/share/migemo/utf-8/migemo-dict")
+                                  ((eq system-type 'gnu/linux) "/usr/share/cmigemo/utf-8/migemo-dict")))
+    (setq migemo-user-dictionary nil)
+    (setq migemo-regex-dictionary nil)
+    (setq migemo-coding-system 'utf-8-unix))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
