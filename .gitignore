@@ -1,0 +1,6 @@
+.ssh
+
+# Chromebook(Crostini)
+cros-garcon.conf
+pulse
+weston.ini
