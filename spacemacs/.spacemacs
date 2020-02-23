@@ -457,6 +457,37 @@ you should place your code here."
     (setq migemo-user-dictionary nil)
     (setq migemo-regex-dictionary nil)
     (setq migemo-coding-system 'utf-8-unix))
+
+  ;;
+  ;; Whitespace mode
+  ;;
+  (setq whitespace-style '(face tabs tab-mark spaces space-mark newline newline-mark))
+  (setq whitespace-display-mappings '(;; タブは⇢(U+21e2: RIGHTWARDS DASHED ARROW)で表示
+                                      (tab-mark ?\t [#x21e2 ?\t])
+                                      ;; 半角スペースは (U+2423: OPEN BOX)で表示
+                                      (space-mark #x0020 [#x2423])
+                                      ;; 全角スペースは　(U+2b1a: DOTTED SQUARE)で表示
+                                      (space-mark #x3000 [#x2b1a])
+                                      ;; 改行は⏎(U+23ce: RETURN SYMBOL)で表示
+                                      (newline-mark ?\n [#x23ce ?\n])))
+  (global-set-key (kbd "C-x w") 'global-whitespace-mode)
+  (add-hook 'global-whitespace-mode-hook
+            (lambda ()
+              (set-face-foreground 'whitespace-tab nil)
+              (set-face-background 'whitespace-tab "#cc9900")
+              (set-face-underline 'whitespace-tab nil)
+              (set-face-foreground 'whitespace-space "#999999")
+              (set-face-background 'whitespace-space nil)
+              (set-face-underline 'whitespace-space nil)
+              (set-face-foreground 'whitespace-hspace "#cccc99")  ; 効かない?
+              (set-face-background 'whitespace-hspace nil)  ; 効かない?
+              (set-face-underline 'whitespace-hspace nil)  ; 効かない?
+              (set-face-foreground 'whitespace-newline "#999999")
+              (set-face-background 'whitespace-newline nil)
+              (set-face-underline 'whitespace-newline nil)
+              ;(rainbow-mode)))
+              ))
+  (global-whitespace-mode t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
