@@ -366,6 +366,55 @@ you should place your code here."
   ;;(face-font 'default nil ?○)
   ;;(face-font 'default nil ?□)
   ;;(face-font 'default nil ?×)
+
+  ;;
+  ;; Key bindings
+  ;;
+  (define-key global-map (kbd "C-h") 'backward-delete-char)
+  (define-key global-map (kbd "C-t") 'other-window)
+  (define-key global-map (kbd "C-s") 'isearch-forward)
+  (define-key global-map (kbd "C-r") 'isearch-backward)
+  (define-key global-map (kbd "C-x ?") 'help-command)
+  (define-key global-map (kbd "C-x u") 'undo-tree-undo)
+  (define-key global-map (kbd "C-c a") 'beginning-of-buffer)
+  (define-key global-map (kbd "C-c e") 'end-of-buffer)
+  (define-key global-map (kbd "C-c l") 'toggle-truncate-lines)
+  (define-key global-map (kbd "C-c s") 'swiper)
+
+  ;;
+  ;; Unicode正規化のNFD<->NFC対応
+  ;; https://ja.wikipedia.org/wiki/Unicode%E6%AD%A3%E8%A6%8F%E5%8C%96
+  ;;
+  (require 'ucs-normalize)
+  (set-file-name-coding-system 'utf-8-hfs)
+  (setq locale-coding-system 'utf-8-hfs)
+
+  ;;
+  ;; Cua Mode
+  ;;
+  (cua-mode t)
+  (setq cua-enable-cua-keys nil)
+
+  ;;
+  ;; Save Place
+  ;;
+  (setq-default save-place t)
+  (setq save-place-file "~/.local/share/spacemacs/.saved-places")
+
+  ;;
+  ;; Ivy
+  ;; https://oremacs.com/swiper/
+  ;;
+  ;; 開いていないバッファをリストに表示しない
+  (setq ivy-use-virtual-buffers nil)
+
+  ;;
+  ;; Misc
+  ;;
+  ;; kill-lineに改行も含める
+  (setq kill-whole-line t)
+  ;; Frame transparency
+  (spacemacs/toggle-transparency nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
