@@ -342,6 +342,30 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;;
+  ;; Language
+  ;;
+  (set-language-environment "Japanese")
+  (prefer-coding-system 'utf-8-unix)
+
+  ;;
+  ;; Font
+  ;;
+  ;; sample
+  ;;   0123456789abcdefghijklmnopqrstuvwxyz
+  ;;   あいうえおアイウエオ壱弐参肆伍
+  ;;   ○△□×
+  ;;
+  ;; デフォルトフォントセットのunicode charsetに小杉丸ゴシックを設定
+  (set-fontset-font t 'unicode (font-spec :family "MotoyaLMaru" :size 14))
+  ;; 記号類はデフォルトフォントで表示しないようにする
+  (setq use-default-font-for-symbols nil)
+
+  ;;(face-font 'default nil ?*)
+  ;;(face-font 'default nil ?0)
+  ;;(face-font 'default nil ?○)
+  ;;(face-font 'default nil ?□)
+  ;;(face-font 'default nil ?×)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
