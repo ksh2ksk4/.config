@@ -545,6 +545,12 @@ you should place your code here."
   (setq plantuml-options "-charset UTF-8")
   ;  ;; plantuml.jarへのパスを設定
   ;  (setq org-plantuml-jar-path "~/.emacs.d/lib/plantuml.jar")
+
+  ;;
+  ;; My scripts
+  ;;
+  (add-to-list 'load-path "~/.config/spacemacs")
+  (require 'my)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
