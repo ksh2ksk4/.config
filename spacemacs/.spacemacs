@@ -507,6 +507,16 @@ you should place your code here."
   ;;
   (setq-default js2-basic-offset 2)
   (setq-default js-indent-level 2)
+
+  ;;
+  ;; Shell Scripts Layer
+  ;; https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/shell-scripts
+  ;;
+  ;; fish-mode
+  ;; https://github.com/emacsmirror/fish-mode
+  ;;
+  (custom-set-variables '(fish-indent-offset 2))
+  ;;(setq-default fish-indent-offset 2)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
