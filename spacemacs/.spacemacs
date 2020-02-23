@@ -527,6 +527,24 @@ you should place your code here."
     (setq yas-snippet-dirs (append yas-snippet-dirs
                                    '("~/.config/spacemacs/snippets")))
     (yas-reload-all))
+
+  ;;
+  ;; plantuml-mode
+  ;;
+  ;; .pu拡張子のファイルをplantuml-modeで開く
+  (add-to-list 'auto-mode-alist '("\.puml$" . plantuml-mode))
+  ;; あなたのplantuml.jarファイルの絶対パスをかく
+  ;; $ (brew --prefix plantuml)/libexec/plantuml.jar
+  (setq plantuml-jar-path "/usr/local/opt/plantuml/libexec/plantuml.jar")
+  ;; javaにオプションを渡したい場合はここにかく
+  (setq plantuml-java-options "")
+  ;; plantumlのプレビューをsvg, pngにしたい場合はここをコメントイン
+  ;; デフォルトでアスキーアート
+  ;;(setq plantuml-output-type "svg")
+  ;; 日本語を含むUMLを書く場合はUTF-8を指定
+  (setq plantuml-options "-charset UTF-8")
+  ;  ;; plantuml.jarへのパスを設定
+  ;  (setq org-plantuml-jar-path "~/.emacs.d/lib/plantuml.jar")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
