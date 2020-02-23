@@ -517,6 +517,16 @@ you should place your code here."
   ;;
   (custom-set-variables '(fish-indent-offset 2))
   ;;(setq-default fish-indent-offset 2)
+
+  ;;
+  ;; YASnippet
+  ;; https://github.com/joaotavora/yasnippet
+  ;;
+  (use-package yasnippet
+    :config
+    (setq yas-snippet-dirs (append yas-snippet-dirs
+                                   '("~/.config/spacemacs/snippets")))
+    (yas-reload-all))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
