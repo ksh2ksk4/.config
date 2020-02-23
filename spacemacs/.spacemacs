@@ -493,6 +493,13 @@ you should place your code here."
   ;; Magit
   ;;
   (setq magit-log-margin '(t "%Y-%m-%d %H:%M:%S" magit-log-margin-width t 18))
+
+  ;;
+  ;; Atomic Chrome for Emacs
+  ;;
+  (use-package atomic-chrome
+    :init
+    (atomic-chrome-start-server))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
