@@ -500,6 +500,13 @@ you should place your code here."
   (use-package atomic-chrome
     :init
     (atomic-chrome-start-server))
+
+  ;;
+  ;; JavaScript Layer
+  ;; https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/javascript
+  ;;
+  (setq-default js2-basic-offset 2)
+  (setq-default js-indent-level 2)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
