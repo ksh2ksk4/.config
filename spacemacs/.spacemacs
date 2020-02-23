@@ -488,6 +488,11 @@ you should place your code here."
               ;(rainbow-mode)))
               ))
   (global-whitespace-mode t)
+
+  ;;
+  ;; Magit
+  ;;
+  (setq magit-log-margin '(t "%Y-%m-%d %H:%M:%S" magit-log-margin-width t 18))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
