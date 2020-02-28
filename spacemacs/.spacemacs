@@ -160,6 +160,7 @@ values."
                                ;:size 20
                                ;; for WQHD(2560x1440)
                                ;:size 16
+                               ;; for MacBook Pro(2560x1600)
                                ;; for Chromebook
                                :size 14
                                :weight normal
@@ -360,6 +361,8 @@ you should place your code here."
   (set-fontset-font t 'unicode (font-spec :family "MotoyaLMaru" :size 14))
   ;; 記号類はデフォルトフォントで表示しないようにする
   (setq use-default-font-for-symbols nil)
+  ;; 　(U+2b1a: DOTTED SQUARE)のみヒラギノ丸ゴ ProNで表示
+  (set-fontset-font t #x2b1a (font-spec :family "Hiragino Maru Gothic ProN" :size 14))
 
   ;;(face-font 'default nil ?*)
   ;;(face-font 'default nil ?0)
