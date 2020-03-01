@@ -1,0 +1,56 @@
+#!/usr/bin/env fish
+
+# https://git-scm.com/docs/githooks
+
+function set_commit_message
+  if test (count $argv) -ne 2
+    return 1
+  end
+
+  set -l message $argv[1]
+  set -l file $argv[2]
+  set -l tmp_file "$file"_tmp
+  echo $message |cat - $file >$tmp_file
+  mv $tmp_file $file
+
+  return 0
+end
+
+set -l argc (count $argv)
+set -l message_file $argv[1]
+
+set -l repository_url (git remote -vv |grep '\(fetch\)' |string replace -r '[ \t]+' ' ' |cut -d ' ' -f 2)
+string match -r '(^.+/wiki$|^.+ksh2ksk4/memoranda.git$|^.+ksh2ksk4/ksh2ksk4.github.io.git$)' $repository_url
+
+if test $status -eq 0
+  # wikiかMemorandaの場合
+  set_commit_message 'Update documents' $message_file
+
+  exit $status
+end
+
+# wikiかMemoranda以外の場合
+set -l branch (git branch |grep '^* ' |string replace '* ' '')
+string match -r '^feature_docs$' $branch
+
+if test $status -eq 0
+  # 'feature_docs'ブランチの場合
+  set_commit_message 'Update documents' $message_file
+
+  exit $status
+end
+
+# 'feature_docs'ブランチ以外の場合
+string match -r '(^feature_|^test_)' $branch
+
+if test $status -eq 0
+  # フィーチャーブランチの場合
+  set -l feature (string replace -r '(^feature_|^test_)' '#' $branch)
+
+  if test $argc -eq 1
+    # 通常のコミットの場合
+    set_commit_message "refs $feature " $message_file
+
+    exit $status
+  end
+end
