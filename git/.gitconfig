@@ -1,0 +1,34 @@
+[core]
+  excludesfile = /Users/kishi/.gitignore_global
+[user]
+  name = KISHI Kousuke
+  email = ksh2ksk4@gmail.com
+[push]
+  default = current
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+[pager]
+  log = diff-highlight |less
+  show = diff-highlight |less
+  diff = diff-highlight |less
+[color "diff"]
+  context = "#bfc2bc" normal
+  meta = normal dim ul normal
+  frag = normal dim italic normal
+  old = "#da5774" normal
+  new = "#8cc16e" normal
+  commit = normal ul normal
+  whitespace =
+  oldMoved =
+  newMoved =
+[alias]
+  #The accepted attributes are bold, dim, ul, blink, reverse, italic, and strike (for crossed-out or "strikethrough" letters). The position of any attributes with respect to the colors (before, after, or in between), doesn’t matter. Specific attributes may be turned off by prefixing them with no or no- (e.g., noreverse, no-ul, etc).
+  tree = log --graph --date-order -C -M --pretty=format:\"%C(cyan reverse)%d%Creset %C(red bold)%ad%Creset %C(green ul)%an%Creset %s %C(yellow dim)<%h>%Creset\" --date=short
+  tree-all = log --graph --date-order -C -M --pretty=format:\"%C(cyan reverse)%d%Creset %C(red bold)%ad%Creset %C(green ul)%an%Creset %s %C(yellow dim)<%h>%Creset\" --all --date=short
+  diff = diff --ignore-all-space --ignore-blank-lines --function-context
+[merge]
+  ff = false
+[pull]
+  ff = only
