@@ -1,6 +1,7 @@
 .ssh
 
 configstore
+fisher
 psysh
 
 # Karabiner-Elements
