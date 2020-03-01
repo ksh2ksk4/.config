@@ -1,5 +1,8 @@
 .ssh
 
+configstore
+psysh
+
 # Karabiner-Elements
 karabiner/automatic_backups
 
