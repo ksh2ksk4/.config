@@ -7,6 +7,9 @@ psysh
 # Karabiner-Elements
 karabiner/automatic_backups
 
+# Spacemacs
+spacemacs/snippets/*/work
+
 # Chromebook(Crostini)
 cros-garcon.conf
 pulse
