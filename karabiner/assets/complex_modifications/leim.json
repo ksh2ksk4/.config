@@ -1,0 +1,38 @@
+{
+  "title": "IM",
+  "rules": [
+    {
+      "description": "Spacemacs以外でもC-\\で入力モードを切り替える",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "backslash",
+            "modifiers": {
+              "mandatory": [
+                "left_control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "spacebar",
+              "modifiers": [
+                "left_control",
+                "left_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "Emacs"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

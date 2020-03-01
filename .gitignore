@@ -1,5 +1,8 @@
 .ssh
 
+# Karabiner-Elements
+karabiner/automatic_backups
+
 # Chromebook(Crostini)
 cros-garcon.conf
 pulse
