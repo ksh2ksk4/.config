@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: code-block-example
+# key: #be
+# --
+${1:}#+BEGIN_EXAMPLE
+$1$0
+$1#+END_EXAMPLE

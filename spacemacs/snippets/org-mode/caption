@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: caption
+# key: #c
+# --
+${1:}#+CAPTION: $0
