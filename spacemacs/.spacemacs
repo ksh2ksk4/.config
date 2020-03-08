@@ -414,6 +414,7 @@ you should place your code here."
   ;;
   ;; Misc
   ;;
+  (setq-default major-mode 'text-mode)
   ;; kill-lineに改行も含める
   (setq kill-whole-line t)
   ;; Frame transparency
