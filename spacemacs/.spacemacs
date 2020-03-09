@@ -383,6 +383,10 @@ you should place your code here."
   (define-key global-map (kbd "C-c e") 'end-of-buffer)
   (define-key global-map (kbd "C-c l") 'toggle-truncate-lines)
   (define-key global-map (kbd "C-c s") 'swiper)
+  (define-key global-map (kbd "C-c d") 'my/downcase-word)
+  ;;(define-key global-map (kbd "C-c C-r d") 'downcase-region)
+  (define-key global-map (kbd "C-c u") 'my/upcase-word)
+  ;;(define-key global-map (kbd "C-c C-r u") 'upcase-region)
 
   ;;
   ;; Unicode正規化のNFD<->NFC対応
