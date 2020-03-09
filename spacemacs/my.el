@@ -28,6 +28,7 @@
                     (replace-match "" nil nil relative-from-home)))
          (html-dir "ksh2ksk4.github.io/"))
     (rename-file (org-html-export-to-html)
+                 ;;todo このsub-dirが存在しない場合にディレクトリを作る
                  (concat user-home-directory document-root-dir html-dir sub-dir)
                  t)))
 
