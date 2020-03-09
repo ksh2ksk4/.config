@@ -450,7 +450,9 @@ you should place your code here."
 
   (use-package mozc-temp
     :init
-    (global-set-key (kbd "M-n") 'mozc-temp-convert))
+    (global-set-key (kbd "M-n") 'mozc-temp-convert)
+    :custom
+    (mozc-temp-remove-pre-space nil))
 
   ;;
   ;; migemo
