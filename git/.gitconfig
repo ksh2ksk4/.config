@@ -1,8 +1,8 @@
+[include]
+  # このファイルはリポジトリで管理しない
+  path = ~/.own/.private/.gitconfig
 [core]
   excludesfile = /Users/kishi/.gitignore_global
-[user]
-  name = KISHI Kousuke
-  email = ksh2ksk4@gmail.com
 [push]
   default = current
 [filter "lfs"]
