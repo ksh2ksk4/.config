@@ -2,7 +2,7 @@
   # このファイルはリポジトリで管理しない
   path = ~/.own/.private/.gitconfig
 [core]
-  excludesfile = /Users/kishi/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [push]
   default = current
 [filter "lfs"]
