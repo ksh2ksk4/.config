@@ -557,6 +557,20 @@ you should place your code here."
   ;  (setq org-plantuml-jar-path "~/.emacs.d/lib/plantuml.jar")
 
   ;;
+  ;; Org-mode
+  ;;
+  ;; org-babelで使用する言語を登録
+  (org-babel-do-load-languages
+   'org-babel-load-languages '((calc . t)
+                               (emacs-lisp . t)
+                               (kotlin . t)
+                               (org . t)
+                               (plantuml . t)
+                               (rust . t)))
+  ;; コードブロックを実行する際に確認しない
+  (setq org-confirm-babel-evaluate nil)
+
+  ;;
   ;; My scripts
   ;;
   (add-to-list 'load-path "~/.config/spacemacs")
