@@ -1,8 +1,17 @@
 .ssh
 
 configstore
-fisher
 psysh
+
+# Fisher
+fish/fishfile
+fish/functions/fisher.fish
+fisher
+# oh-my-fish/plugin-peco
+fish/functions/peco_kill.fish
+fish/functions/peco_select_history.fish
+# Misc packages
+fish/completions
 
 # Karabiner-Elements
 karabiner/automatic_backups
