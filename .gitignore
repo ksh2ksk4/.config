@@ -1,2 +1,12 @@
 .tmp.driveupload
 workspace.code-workspace
+
+# 追加・変更したファイルが存在しないディレクトリ
+fish/completions
+fish/conf.d
+# 自動生成されるファイル
+fish/functions/fisher.fish
+fish/functions/peco_kill.fish
+fish/functions/peco_select_history.fish
+fish/fish_plugins
+fish/fish_variables
