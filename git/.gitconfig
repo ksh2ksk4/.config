@@ -1,0 +1,3 @@
+[include]
+  # このファイルはリポジトリで管理しない
+  path = ~/mine/private/.gitconfig
